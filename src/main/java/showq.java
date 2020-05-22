@@ -71,6 +71,95 @@ public class showq extends HttpServlet {
                                    i++;
                                 }
                             } 
+                            
+                            out.println("Questions Asked Publicly");
+                            
+                            try
+                     {
+                 try {  
+                     Class.forName("com.mysql.jdbc.Driver");
+                 } catch (ClassNotFoundException ex) {
+                     
+                 }
+                            Connection con2=DriverManager.getConnection(  
+                            "jdbc:mysql://localhost:3306/public_answers","root","1234");  //connecting with table
+                             
+                             
+                             PreparedStatement ps1=con2.prepareStatement("SELECT * FROM public_ques where student_id='"+id+"';");
+                             ResultSet result1=ps1.executeQuery();
+                             
+                             
+                             
+                            int k=1;
+                            while (result1.next()) 
+                            {
+                                   String q_id=result1.getString(1);
+                                
+                                
+                                   out.println("\n");
+                                   out.println("Q"+k+")");
+                                   String question = result1.getString(2);
+                                 //  String s = result1.getString(3);
+                                   out.println(question);
+                                   out.println("\n");
+                                  // out.println(s);
+                                   out.println("\n");
+                                   out.println("ID: "+q_id);
+                                   out.println("\n");
+                            
+                                    PreparedStatement ps2=con2.prepareStatement("SELECT * FROM public_ans where question_id='"+q_id+"';");
+                                    ResultSet result2=ps2.executeQuery();
+                                    
+                                   int j=1;
+                                   while(result2.next())
+                                   {
+                                   
+           
+                                        String q_id1=result2.getString(1);
+
+
+                                        out.println("\n");
+                                        out.println("Ans"+j+")");
+                                        String a1 = result2.getString(2);
+                                        String s1 = result2.getString(3);
+                                        //out.println("ID: "+q_id1);
+                                        out.println("\n");
+                                        out.println(a1);
+                                        out.println("\n");
+                                        out.println(s1);
+                                        out.println("\n");
+
+                                        j++;
+                                  }
+                                  
+                                  
+                                  
+                                  k++;
+                                  
+                            } 
+			      //;
+                                   // PreparedStatement stmt=con.prepareStatement("insert into qdata values(?,?,?,?)");  
+                                    //here studentdb is database name, root is username and password 
+//                                    stmt.setString(1,student_id);//1 specifies the first parameter in the query  
+//                                    stmt.setString(2,teacher_id);
+//                                    stmt.setString(3,ques);
+//                                    stmt.setString(4," ");
+                                   
+                                //    int i=stmt.executeUpdate();  
+                                    System.out.println("Questions Showed");
+                     
+                     }catch(SQLException e)
+                     {
+                         e.printStackTrace();
+                     }
+
+                            
+                            
+                            
+                            
+                            
+                            
+                            
 			      //;
                                    // PreparedStatement stmt=con.prepareStatement("insert into qdata values(?,?,?,?)");  
                                     //here studentdb is database name, root is username and password 

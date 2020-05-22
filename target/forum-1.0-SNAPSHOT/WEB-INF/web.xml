@@ -40,6 +40,22 @@
         <servlet-name>add_ans</servlet-name>
         <servlet-class>add_ans</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>signup_public_ans</servlet-name>
+        <servlet-class>Login.signup_public_ans</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>insert_public_answer</servlet-name>
+        <servlet-class>insert_public_answer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>signup_public_ques</servlet-name>
+        <servlet-class>Login.signup_public_ques</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>post_question_serv</servlet-name>
+        <servlet-class>post_question_serv</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>addservlet</servlet-name>
         <url-pattern>/add</url-pattern>
@@ -79,6 +95,22 @@
     <servlet-mapping>
         <servlet-name>add_ans</servlet-name>
         <url-pattern>/add_ans</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>signup_public_ans</servlet-name>
+        <url-pattern>/signup_public_ans</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>insert_public_answer</servlet-name>
+        <url-pattern>/insert_public_answer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>signup_public_ques</servlet-name>
+        <url-pattern>/signup_public_ques</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>post_question_serv</servlet-name>
+        <url-pattern>/post_question_serv</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

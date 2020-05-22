@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author KETAN SARODE
  */
-public class Signup extends HttpServlet {
+public class signup_public_ans extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,11 +40,11 @@ public class Signup extends HttpServlet {
         {
             HttpSession session = request.getSession() ;
             session.setAttribute("username", uname);
-            response.sendRedirect("Home.jsp");
+            response.sendRedirect("give_pub_ans.jsp");
         }
         else
         {
-          response.sendRedirect("failed_signup.jsp");  
+          response.sendRedirect("failed_authentication.jsp");  
         }    
         
         

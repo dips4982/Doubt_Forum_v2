@@ -1,2 +1,6 @@
 addservlet.class
+post_question_serv.class
+Login\signup_public_ques.class
+insert_public_answer.class
 square.class
+Login\signup_public_ans.class
